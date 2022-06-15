@@ -31,8 +31,21 @@ SECRET_KEY = 'django-insecure-tx%(ly0vr#=#choij+or$4mndo8ilf^@0e5okvh3@+iu5k(8z8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
+# cloudinary.config(
+#     cloud_name=config('dl0fo42kz'), 
+#     api_key=config('835574444477178', cast=int), 
+#     api_secret=config('TvSAQe3XIlIrnRQauEuhBOENRic'),
+# )
+
+CLOUDINARY_STORAGE = {
+# copied form dasshboard
+    'CLOUD_NAME': 'dl0fo42kz',
+    'API_KEY': '835574444477178',
+    'API_SECRET': 'TvSAQe3XIlIrnRQauEuhBOENRic',
+}
 
 # Application definition
 
@@ -142,6 +155,9 @@ USE_L10N = True
 USE_TZ = True
 
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -158,4 +174,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+
+
+
+
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())
+

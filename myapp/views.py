@@ -19,6 +19,13 @@ from rest_framework import viewsets
 # Create your views here.
 
 def welcome(request):
+#     # all_post=Post.objects.all()
+#     # all_post = random.sample(all_post, 3)
+#     # a_post = random.sample(all_post, 1)
+#     # random_post = random.sample(all_post, 1)
+#     # return render(request,'index.html',{"all_post":all_post,"a_post":a_post,"random_post":random_post})    
+    
+    
     all_post=Post.objects.all()
     all_post=all_post[::-1]
     a_post = random.randint(0, len(all_post)-1)

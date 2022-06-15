@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
-</html>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container" id="searchcontainer">
+  <div class="row">
+
+    {% if results%}
+    <h5>Found{{results.count}} Projects</h5>
+
+    {% for post in results%}
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.description}}</p>
+          <a href="{{post.id}}" class="btn btn-primary">View</a>
+        </div>
+      </div>
+
+    </div>
+    {% endfor%}
+    {% else%}
+    <h5>No results to match your search term</h5>
+
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock%}
+
+<!-- /project/{{post.id}} -->

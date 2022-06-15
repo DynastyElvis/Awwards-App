@@ -61,7 +61,7 @@ SECRET_KEY = 'django-insecure-tx%(ly0vr#=#choij+or$4mndo8ilf^@0e5okvh3@+iu5k(8z8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # cloudinary.config(

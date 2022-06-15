@@ -21,9 +21,20 @@
           <h5 class="card-title">{{post.title}}</h5>
           <p class="card-text">{{post.description}}</p>
         </div>
-        
+        <div class="card-footer">
+
+          <small class="text-muted" id="small"><img src="{{post.user.profile.profile_picture.url}}" class="nav-img mr-2"
+              alt=""></small>
+          <small class="text-muted" id="small"> Posted By: {{post.user.username|title}}</small>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"><a href="{{post.link}}" class="btn btn-outline-danger" id="btn">View</a> </small>
+          <small class="text-muted" id="small" style="float:right">{{post.date|date}}</small>
+        </div>
+      </div>
 
     </div>
+    {% endfor%}
     {% else%}
     <h5>No results to match your search term</h5>
 

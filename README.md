@@ -44,7 +44,7 @@ GITHUB - [ELVIS](https://github.com/DynastyElvis)
 ### Installation
 1. Clone this Github repository:
 ```
-    git clone https://github.com/juliamwangi123/clone_awwards.git
+    git clone https://github.com/DynastyElvis/Awwards-App
      
     cd awwards
 
@@ -74,7 +74,6 @@ GITHUB - [ELVIS](https://github.com/DynastyElvis)
 ```
     python manage.py syncdb
 ```
-
 
 
 6. Collect static files:

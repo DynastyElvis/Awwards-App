@@ -38,3 +38,9 @@
     outline-color: white;
     transition: 0.9s;
 }
+#btn1{
+    background-color: rgb(249, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    
+}

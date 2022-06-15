@@ -19,7 +19,24 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="card mb-4">
-            
+            <div class="card-body text-center">
+                {% if my_profile.profile_picture%}
+                <img src="{{my_profile.profile_picture.url}}" alt="profile_picture"
+                class="img-fluid"
+                style="width: 240px; border-radius: 80px;">
+
+                {% else%}
+                <h1>No Image</h1>
+                {% endif %}
+              <h5 class="my-3">{{user.username}}</h5>
+              <div class="d-flex justify-content-center mb-2">
+                <button type="button" class="btn btn-primary">Follow</button>
+                <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
         <div class="col-lg-8">
           <div class="card mb-4">
             <div class="card-body">

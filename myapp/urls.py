@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 from rest_framework.authtoken.views import obtain_auth_token
 
 
-
 urlpatterns=[
     re_path('^$',views.welcome,name='welcome'),
     re_path('^$',views.index,name='index'),
@@ -28,3 +27,11 @@ urlpatterns=[
    
     
 ]
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+
+   
+
+
+

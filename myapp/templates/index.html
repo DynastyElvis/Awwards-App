@@ -1,12 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
-</html>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container" id="indexcontainer">
+  <div class="featured">
+    <h3>Featured Project</h3>
+  </div>
+  <section id="content">
+    <div class="row">
+      <div class="col-md-8">
+        <img src="{{random_post.photo.url}}" class="img-fluid" />
+      </div>
+      <div class="col-md-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-4">
+              <p class="mb-0" id="header">Title:</p>
+            </div>
+            <div class="col-sm-8">
+              <p class="text-muted mb-0" id="title1">{{random_post.title}}</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-4">
+              <p class="mb-0" id="header">Description:</p>
+            </div>
+            <div class="col-sm-8">
+              <p class="text-muted mb-0">{{random_post.description}}</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-4">
+              <p class="mb-0" id="header">Posted By:</p>
+            </div>
+            <div class="col-sm-8">
+              <p class="text-muted mb-0">{{random_post.user.username|title}}</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-4">
+              <p class="mb-0" id="header">Date Posted:</p>
+            </div>
+            <div class="col-sm-8">
+              <p class="text-muted mb-0">{{random_post.date|date}}</p>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-8">
+              <a href="{{random_post.link}}" class="btn btn-outline-danger " style="text-align:center"id="btn1">Visit Project</a>
+
+            </div>
+          </div>
+        </div>
+
+    </div>
+    </div>
+
+  </section>
+</div>

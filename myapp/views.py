@@ -144,4 +144,31 @@ def postproject(request):
     return render(request, 'newpost.html', context)
 
 
+
+class PostItems(APIView):
+    permission_classes = (IsAdminOrReadOnly,)
+    def get(self,request,format=None):
+        all_list=Post.objects.all()
+        serializers=PostSerializar(all_list,many=True)
+        return Response(serializers.data)
+
+    def post(self,request,format=None):
+        serializers=PostSerializar(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data,status=status.HTTP_201_CREATED)
+        return Response(serializers.errors,status=status.HTTP_400_BAD_REQUEST)
+
+class ProfileItems(APIView):
+
+    permission_classes = (IsAdminOrReadOnly,)
+    def get(self,request,format=None):
+        all_list=Profile.objects.all()
+        user=request.user
+        serializers=ProfileSerializer(all_list,many=True)
+        return Response(serializers.data,user)
+
+class ProfileViewSet(viewsets.ModelViewSet):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
     

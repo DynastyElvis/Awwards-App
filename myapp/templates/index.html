@@ -62,3 +62,41 @@
 
   </section>
 </div>
+<div class="container mt-5">
+<h3 class="text-center mb-3" > Projects</h3>
+  <div class="row">
+    {% for post in all_post%}
+
+    <div class="col-md-3 mb-5" id="cont">
+      <div class="card h-100">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+          <img src="{{post.photo.url}}" class="img-fluid" />
+          <a href="{%url 'vote' post_id=post.id%}">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.description}}</p>
+        </div>
+        <div class="card-footer">
+
+          <a href="/profile/"><small class="text-muted" id="small"><img src="{{post.user.profile.profile_picture.url}}" class="nav-img mr-2"
+              alt=""></small></a>
+          <small class="text-muted" id="small"> Posted By: {{post.user.username|title}}</small>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"><a href="{{post.link}}" class="btn btn-outline-danger" id="btn">View</a> </small>
+          <small class="text-muted" id="small" style="float:right">{{post.date|date}}</small>
+        </div>
+      </div>
+
+    </div>
+    {% endfor%}
+
+  </div>
+</div>
+
+{% endblock%}
+
+<!-- /project/{{post.id}} -->

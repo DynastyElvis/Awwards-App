@@ -16,6 +16,14 @@ GITHUB - [ELVIS](https://github.com/DynastyElvis)
 
 [Go Back to the top](#Awwards-App)
 
+## Screenshots 
+###### User Sign Up and Login Page
+ 
+<img src="https://raw.githubusercontent.com/DynastyElvis/Awwards-App/main/media/images/Screenshot%20from%202022-06-15%2018-37-05.png">
+ 
+
+ ###### ADMIN Dashboard to manage the App
+ <img src="https://raw.githubusercontent.com/DynastyElvis/Awwards-App/main/media/images/Screenshot%20from%202022-06-15%2018-48-42.png">
 
 
 ### User Story

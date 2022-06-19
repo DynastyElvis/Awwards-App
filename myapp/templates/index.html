@@ -3,8 +3,21 @@
 {% block content %}
 <div class="container" id="indexcontainer">
   <div class="featured">
-    <h3>Featured Project</h3>
+    <h3>My Projects</h3>
   </div>
+  <img src="/media/images/black kid.jpg" class="w3-image w3-greyscale-min" style="width:35%">
+
+
+  <!-- #swoosh {
+    margin-left: -15px;
+   
+   }
+   
+   <div class='container-fluid'>
+     <div class="row outerDiv">
+       <div class="col-xs-3 col-md-2 imageDiv" >
+          <img class="img-responsive" id="swoosh" ...
+        </div> -->
   <section id="content">
     <div class="row">
       <div class="col-md-8">
@@ -14,7 +27,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-sm-4">
-              <p class="mb-0" id="header">Title:</p>
+              <p class="mb-0" id="header">Name:</p>
             </div>
             <div class="col-sm-8">
               <p class="text-muted mb-0" id="title1">{{random_post.title}}</p>
@@ -72,7 +85,7 @@
         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
           <img src="{{post.photo.url}}" class="img-fluid" />
           <a href="{%url 'vote' post_id=post.id%}">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            <div class="mask" style="background-color: rgba(109, 21, 21, 0.15);"></div>
           </a>
         </div>
         <div class="card-body">

@@ -70,13 +70,26 @@ ALLOWED_HOSTS = []
 #     api_secret=config('TvSAQe3XIlIrnRQauEuhBOENRic'),
 # )
 
-CLOUDINARY_STORAGE = {
-# copied form dasshboard
-    'CLOUD_NAME': 'dl0fo42kz',
-    'API_KEY': '835574444477178',
-    'API_SECRET': 'TvSAQe3XIlIrnRQauEuhBOENRic',
-}
+# CLOUDINARY_STORAGE = {
+# # copied form dasshboard
+#     'CLOUD_NAME': 'dl0fo42kz',
+#     'API_KEY': '835574444477178',
+#     'API_SECRET': 'TvSAQe3XIlIrnRQauEuhBOENRic',
+# }
 
+cloudinary.config(
+    cloud_name = 'clarametto-com',
+    api_key='252397854447761',
+    api_secret='CxFIrvQJ2kPuWALgaj6Rlespovc',
+    secure = 'True'
+)
+CLOUDINARY_STORAGE = {
+    'CD_NAME':'clarametto-com',
+    'CD_API':'252397854447761',
+    'CD_SECRET':'CxFIrvQJ2kPuWALgaj6Rlespovc',
+    'CD_SECURE':'True',
+
+}
 # Application definition
 
 INSTALLED_APPS = [

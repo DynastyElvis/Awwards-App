@@ -28,10 +28,10 @@ def welcome(request):
     
     all_post=Post.objects.all()
     all_post=all_post[::-1]
-    a_post = random.randint(0, len(all_post)-1)
-    random_post = all_post[a_post]
+    a_post =(0, len(all_post)-1)
+    # random_post = all_post[a_post]
 
-    return render(request,'index.html',{"all_post":all_post,"random_post":random_post})
+    return render(request,'index.html',{"all_post":all_post})
 
 def index(request):
     indexpost=Post.objects.filter(id=1)
@@ -126,14 +126,14 @@ def postproject(request):
     try:
         posts=Post.objects.all() 
         posts=posts[::-1]
-        a_post = random.randint(0, len(posts)-1)
-        random_post = posts[a_post]
+        a_post = (0, len(posts)-1)
+        # random_post = posts[a_post]
     except Post.DoesNotExist:
         posts=None
 
     context = {
         'form':form,
-        'random_post': random_post
+        # 'random_post': random_post
     }
     return render(request, 'newpost.html', context)
 
